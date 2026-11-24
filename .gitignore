@@ -1,0 +1,73 @@
+# Secrets et configuration locale
+.local/
+.local.*/
+/.agents/
+/.codex/
+.my.cnf
+.mylogin.cnf
+*.credentials.json
+*.private.json
+.env
+.env.*
+!.env.example
+/config/local.php
+/config/*.local.php
+*.pem
+*.key
+*.p12
+*.pfx
+/.aws/
+
+# Journaux et fichiers générés
+/storage/*
+!/storage/logs/
+/storage/logs/*
+!/storage/logs/.gitkeep
+*.log
+__pycache__/
+*.py[cod]
+/tests/validation-03c1/generated/
+
+# Sauvegardes et exports de données
+/backups/
+*.bak
+*.backup
+*.old
+*~
+*.sql
+*.sql.gz
+*.dump
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+!/database/migrations/*.sql
+!/database/seeds/*.sql
+!/database/setup/*.sql
+!/database/patches/*.sql
+!/database/audit/*.sql
+!/docs/technical-documentation/INSPECTION-MYSQL-LECTURE-SEULE.sql
+
+# Dépendances et outils locaux
+/vendor/
+/node_modules/
+/.idea/
+/.vscode/
+/.claude/
+.DS_Store
+.phpunit.cache/
+
+# Rapports générés — reproductibles via docs/security-assessment/build-report-*.py
+# (le .docx est un binaire volumineux ; on versionne le générateur, pas sa sortie)
+/RAPPORT-SecurePayroll.docx
+/SecurePayroll-Security-Report.docx
+*.docx
+/rapport.html
+/report_en.html
+
+# Brouillons de travail du rapport (jeu incomplet, superseded par les générateurs) — non publiés
+/docs/security-assessment/00-PLAN-RAPPORT.md
+/docs/security-assessment/RAPPORT-SECTION-*.md
+
+# Énoncé du cours et éléments personnels fournis (PDF du sujet, captures perso) — ne jamais committer
+/input/

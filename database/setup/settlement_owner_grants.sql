@@ -1,0 +1,13 @@
+GRANT SELECT(id,archived_at),UPDATE(id) ON secure_payroll.employees TO 'settlement_owner'@'localhost';
+GRANT SELECT ON secure_payroll.payroll_calculations TO 'settlement_owner'@'localhost';
+GRANT SELECT ON secure_payroll.payroll_periods TO 'settlement_owner'@'localhost';
+GRANT SELECT ON secure_payroll.payslip_events TO 'settlement_owner'@'localhost';
+GRANT SELECT,INSERT,TRIGGER ON secure_payroll.payslip_corrections TO 'settlement_owner'@'localhost';
+GRANT SELECT,INSERT,TRIGGER ON secure_payroll.correction_events TO 'settlement_owner'@'localhost';
+GRANT SELECT,INSERT,TRIGGER ON secure_payroll.recovery_requests TO 'settlement_owner'@'localhost';
+GRANT SELECT,INSERT,TRIGGER ON secure_payroll.recovery_events TO 'settlement_owner'@'localhost';
+GRANT SELECT,INSERT,TRIGGER ON secure_payroll.settlement_ledger TO 'settlement_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payroll_assert TO 'settlement_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payroll_read_assert TO 'settlement_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.settlement_command TO 'settlement_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.settlement_detail TO 'settlement_owner'@'localhost';

@@ -1,0 +1,27 @@
+-- Dedicated locked owner; no global privileges, GRANT OPTION or direct financial UPDATE.
+GRANT SELECT (id,employee_number,first_name,last_name,archived_at),UPDATE(id) ON secure_payroll.employees TO 'payroll_owner'@'localhost';
+GRANT SELECT (id,employee_id,disabled_at) ON secure_payroll.accounts TO 'payroll_owner'@'localhost';
+GRANT SELECT (id,code) ON secure_payroll.roles TO 'payroll_owner'@'localhost';
+GRANT SELECT (id,code) ON secure_payroll.permissions TO 'payroll_owner'@'localhost';
+GRANT SELECT (role_id,permission_id) ON secure_payroll.role_permissions TO 'payroll_owner'@'localhost';
+GRANT SELECT (account_id,role_id,valid_from,expires_at,revoked_at) ON secure_payroll.role_assignments TO 'payroll_owner'@'localhost';
+GRANT SELECT (id,employee_id,starts_on,effective_ends_on) ON secure_payroll.employment_contracts TO 'payroll_owner'@'localhost';
+GRANT SELECT (id,employee_id,contract_id,request_id,decision_id,monthly_amount,currency,effective_on) ON secure_payroll.salary_conditions TO 'payroll_owner'@'localhost';
+GRANT SELECT (id,employee_id,contract_id,monthly_amount,currency,effective_on,requester_employee_id) ON secure_payroll.compensation_requests TO 'payroll_owner'@'localhost';
+GRANT SELECT (id,request_id,decision,approver_employee_id) ON secure_payroll.compensation_decisions TO 'payroll_owner'@'localhost';
+GRANT SELECT,INSERT,TRIGGER ON secure_payroll.payroll_periods TO 'payroll_owner'@'localhost';
+GRANT SELECT,INSERT,TRIGGER ON secure_payroll.payroll_inputs TO 'payroll_owner'@'localhost';
+GRANT SELECT,INSERT,TRIGGER ON secure_payroll.payroll_input_decisions TO 'payroll_owner'@'localhost';
+GRANT SELECT,INSERT,TRIGGER ON secure_payroll.payroll_calculations TO 'payroll_owner'@'localhost';
+GRANT SELECT,INSERT,TRIGGER ON secure_payroll.payslip_events TO 'payroll_owner'@'localhost';
+GRANT SELECT,INSERT,TRIGGER ON secure_payroll.payroll_approvals TO 'payroll_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payroll_assert TO 'payroll_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payroll_period_create TO 'payroll_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payroll_input_submit TO 'payroll_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payroll_input_decide TO 'payroll_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payroll_build TO 'payroll_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payroll_calculate TO 'payroll_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payslip_transition TO 'payroll_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payroll_read_assert TO 'payroll_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payroll_overview TO 'payroll_owner'@'localhost';
+GRANT EXECUTE ON PROCEDURE secure_payroll.payslip_detail TO 'payroll_owner'@'localhost';

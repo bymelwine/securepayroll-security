@@ -1,0 +1,4 @@
+<div class="form-grid">
+<div class="field"><label for="<?= h($prefix) ?>-period"><?= h(t('pay.period')) ?></label><select id="<?= h($prefix) ?>-period" name="period_id" required><option value=""><?= h(t('pay.choose')) ?></option><?php foreach ($result['periods'] as $period): ?><option value="<?= h($period['id']) ?>"><?= h(substr($period['month_start'],0,7)) ?></option><?php endforeach; ?></select></div>
+<div class="field"><label for="<?= h($prefix) ?>-employee"><?= h(t('comp.employee')) ?></label><select id="<?= h($prefix) ?>-employee" name="employee_id" required><option value=""><?= h(t('pay.choose')) ?></option><?php foreach ($result['employees'] as $employee): ?><option value="<?= h($employee['id']) ?>"><?= h($employee['employee_number'].' · '.$employee['first_name'].' '.$employee['last_name']) ?></option><?php endforeach; ?></select></div>
+</div>
